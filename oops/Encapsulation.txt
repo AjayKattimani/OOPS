@@ -1,0 +1,37 @@
+class Student {
+
+	// private data (hidden)
+	private int marks;
+
+	// getter method (read access)
+	public int getMarks() {
+		return marks;
+	}
+
+	// setter method (controlled write access)
+	public void setMarks(int marks) {
+
+		// validation (important part of encapsulation)
+		if (marks >= 0 && marks <= 100) {
+			this.marks = marks;
+		} else {
+			System.out.println("Invalid marks!");
+		}
+	}
+}
+
+public class Main {
+	public static void main(String[] args) {
+
+		Student s = new Student();
+
+		// setting value
+		s.setMarks(85);
+
+		// getting value
+		System.out.println("Marks: " + s.getMarks());
+
+		// trying invalid value
+		s.setMarks(150);
+	}
+}
